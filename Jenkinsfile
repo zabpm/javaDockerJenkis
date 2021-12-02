@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.8-adoptopenjdk-8'
-            args '-v /root/m2:/var/maven/.m2'
+            args 'MSYS_NO_PATHCONV=1 docker run -v /root/m2:/var/maven/.m2'
         }
 	}
     stages {
